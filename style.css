@@ -9,39 +9,55 @@ body {
     background: #0b0f0c;
     color: white;
     min-height: 100vh;
+
     display: flex;
     justify-content: center;
     align-items: center;
+
     padding: 20px;
 }
 
 .app {
     width: 100%;
     max-width: 650px;
+
     background: #151a17;
     border: 1px solid #27332c;
     border-radius: 20px;
+
     padding: 35px;
+
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+
     position: relative;
 }
 
-/* EXIT BUTTON */
+/* =========================
+   EXIT BUTTON
+========================= */
 
 .exit-btn {
     position: absolute;
+
     top: 20px;
     right: 20px;
+
     display: flex;
     align-items: center;
     gap: 6px;
+
     padding: 8px 12px;
+
     border: 1px solid #334139;
     border-radius: 8px;
+
     background: transparent;
     color: #9ca3af;
+
     font-size: 13px;
+
     cursor: pointer;
+
     transition: 0.2s ease;
 }
 
@@ -54,10 +70,13 @@ body {
     background: #dc2626;
     color: white;
     border-color: #dc2626;
+
     transform: translateY(-1px);
 }
 
-/* HERO */
+/* =========================
+   HERO
+========================= */
 
 .hero {
     text-align: center;
@@ -67,14 +86,19 @@ body {
 .logo {
     width: 65px;
     height: 65px;
+
     margin: 0 auto 15px;
+
     display: flex;
     align-items: center;
     justify-content: center;
+
     background: #22c55e;
     color: #07100a;
+
     font-size: 35px;
     font-weight: bold;
+
     border-radius: 50%;
 }
 
@@ -87,22 +111,30 @@ body {
     color: #9ca3af;
 }
 
-/* TASK INPUT */
+/* =========================
+   TASK INPUT
+========================= */
 
 .task-input {
     display: flex;
     gap: 10px;
+
     margin-bottom: 30px;
 }
 
 .task-input input {
     flex: 1;
+
     padding: 14px;
+
     border: 1px solid #334139;
     border-radius: 10px;
+
     background: #0d120f;
     color: white;
+
     font-size: 16px;
+
     outline: none;
 }
 
@@ -112,11 +144,15 @@ body {
 
 .task-input button {
     padding: 14px 20px;
+
     border: none;
     border-radius: 10px;
+
     background: #22c55e;
     color: #07100a;
+
     font-weight: bold;
+
     cursor: pointer;
 }
 
@@ -124,12 +160,16 @@ body {
     background: #16a34a;
 }
 
-/* TASK INFO */
+/* =========================
+   TASK INFORMATION
+========================= */
 
 .task-info {
     display: flex;
     justify-content: space-between;
+
     margin-bottom: 15px;
+
     color: #9ca3af;
 }
 
@@ -137,17 +177,23 @@ body {
     list-style: none;
 }
 
-/* TASK */
+/* =========================
+   TASK
+========================= */
 
 .task {
     display: flex;
     align-items: center;
     justify-content: space-between;
+
     gap: 15px;
+
     background: #0d120f;
     border: 1px solid #27332c;
+
     padding: 15px;
     margin-bottom: 12px;
+
     border-radius: 12px;
 }
 
@@ -156,20 +202,37 @@ body {
     font-size: 16px;
 }
 
+/* =========================
+   STATUS
+========================= */
+
 .status {
     padding: 7px;
+
     border-radius: 7px;
+
     background: #1f2923;
     color: white;
+
     border: 1px solid #334139;
+
+    cursor: pointer;
 }
+
+/* =========================
+   DELETE BUTTON
+========================= */
 
 .delete-btn {
     background: #dc2626;
     color: white;
+
     border: none;
+
     padding: 7px 10px;
+
     border-radius: 7px;
+
     cursor: pointer;
 }
 
@@ -177,7 +240,64 @@ body {
     background: #b91c1c;
 }
 
-/* MOBILE */
+/* =========================
+   EXIT SCREEN
+========================= */
+
+.exit-screen {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.exit-icon-large {
+    width: 70px;
+    height: 70px;
+
+    margin: 0 auto 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #22c55e;
+    color: #07100a;
+
+    border-radius: 50%;
+
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.exit-screen h1 {
+    margin-bottom: 10px;
+}
+
+.exit-screen p {
+    color: #9ca3af;
+    margin-bottom: 25px;
+}
+
+.exit-screen button {
+    padding: 12px 20px;
+
+    border: none;
+    border-radius: 8px;
+
+    background: #22c55e;
+    color: #07100a;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.exit-screen button:hover {
+    background: #16a34a;
+}
+
+/* =========================
+   MOBILE
+========================= */
 
 @media (max-width: 600px) {
 
