@@ -23,7 +23,41 @@ body {
     border-radius: 20px;
     padding: 35px;
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    position: relative;
 }
+
+/* EXIT BUTTON */
+
+.exit-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 12px;
+    border: 1px solid #334139;
+    border-radius: 8px;
+    background: transparent;
+    color: #9ca3af;
+    font-size: 13px;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.exit-icon {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.exit-btn:hover {
+    background: #dc2626;
+    color: white;
+    border-color: #dc2626;
+    transform: translateY(-1px);
+}
+
+/* HERO */
 
 .hero {
     text-align: center;
@@ -52,6 +86,8 @@ body {
 .hero p {
     color: #9ca3af;
 }
+
+/* TASK INPUT */
 
 .task-input {
     display: flex;
@@ -88,6 +124,8 @@ body {
     background: #16a34a;
 }
 
+/* TASK INFO */
+
 .task-info {
     display: flex;
     justify-content: space-between;
@@ -98,6 +136,8 @@ body {
 #taskList {
     list-style: none;
 }
+
+/* TASK */
 
 .task {
     display: flex;
@@ -137,9 +177,17 @@ body {
     background: #b91c1c;
 }
 
+/* MOBILE */
+
 @media (max-width: 600px) {
+
     .app {
         padding: 25px;
+    }
+
+    .exit-btn {
+        top: 15px;
+        right: 15px;
     }
 
     .task-input {
