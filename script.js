@@ -6,30 +6,56 @@ const exitButton = document.getElementById("exitButton");
 
 let tasks = [];
 
+/* =========================
+   TASK COUNT
+========================= */
+
 function updateTaskCount() {
     const count = tasks.length;
-    taskCount.textContent = `${count} ${count === 1 ? "task" : "tasks"}`;
+
+    taskCount.textContent =
+        `${count} ${count === 1 ? "task" : "tasks"}`;
 }
 
+/* =========================
+   DISPLAY TASKS
+========================= */
+
 function displayTasks() {
+
     taskList.innerHTML = "";
 
     tasks.forEach(function (task, index) {
 
         const listItem = document.createElement("li");
+
         listItem.className = "task";
 
+        /* Task Name */
+
         const taskName = document.createElement("span");
+
         taskName.className = "task-name";
+
         taskName.textContent = task.name;
 
+        /* Status */
+
         const status = document.createElement("select");
+
         status.className = "status";
 
-        const options = ["To Do", "In Progress", "Completed"];
+        const options = [
+            "To Do",
+            "In Progress",
+            "Completed"
+        ];
 
         options.forEach(function (option) {
-            const optionElement = document.createElement("option");
+
+            const optionElement =
+                document.createElement("option");
+
             optionElement.value = option;
             optionElement.textContent = option;
 
@@ -41,17 +67,29 @@ function displayTasks() {
         });
 
         status.addEventListener("change", function () {
+
             tasks[index].status = status.value;
+
         });
 
-        const deleteButton = document.createElement("button");
+        /* Delete Button */
+
+        const deleteButton =
+            document.createElement("button");
+
         deleteButton.className = "delete-btn";
+
         deleteButton.textContent = "Delete";
 
         deleteButton.addEventListener("click", function () {
+
             tasks.splice(index, 1);
+
             displayTasks();
+
         });
+
+        /* Add Elements */
 
         listItem.appendChild(taskName);
         listItem.appendChild(status);
@@ -62,6 +100,10 @@ function displayTasks() {
 
     updateTaskCount();
 }
+
+/* =========================
+   ADD TASK
+========================= */
 
 addTaskButton.addEventListener("click", function () {
 
@@ -81,25 +123,58 @@ addTaskButton.addEventListener("click", function () {
     displayTasks();
 });
 
+/* =========================
+   ENTER KEY
+========================= */
+
 taskInput.addEventListener("keypress", function (event) {
+
     if (event.key === "Enter") {
+
         addTaskButton.click();
+
     }
+
 });
 
-/* EXIT BUTTON */
+/* =========================
+   EXIT BUTTON
+========================= */
 
 exitButton.addEventListener("click", function () {
 
-    const confirmExit = confirm("Are you sure you want to exit TaskFlow?");
+    const confirmExit =
+        confirm("Are you sure you want to exit TaskFlow?");
 
     if (confirmExit) {
-        window.close();
 
-        setTimeout(function () {
-            alert("TaskFlow cannot close this browser tab automatically. You can close the tab manually.");
-        }, 300);
+        document.querySelector(".app").innerHTML = `
+
+            <div class="exit-screen">
+
+                <div class="exit-icon-large">
+                    ✓
+                </div>
+
+                <h1>TaskFlow Closed</h1>
+
+                <p>
+                    Thanks for using TaskFlow.
+                </p>
+
+                <button onclick="location.reload()">
+                    Reopen TaskFlow
+                </button>
+
+            </div>
+
+        `;
     }
+
 });
+
+/* =========================
+   INITIAL DISPLAY
+========================= */
 
 displayTasks();
