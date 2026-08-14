@@ -2,6 +2,7 @@ const taskInput = document.getElementById("taskInput");
 const addTaskButton = document.getElementById("addTask");
 const taskList = document.getElementById("taskList");
 const taskCount = document.getElementById("taskCount");
+const exitButton = document.getElementById("exitButton");
 
 let tasks = [];
 
@@ -83,6 +84,21 @@ addTaskButton.addEventListener("click", function () {
 taskInput.addEventListener("keypress", function (event) {
     if (event.key === "Enter") {
         addTaskButton.click();
+    }
+});
+
+/* EXIT BUTTON */
+
+exitButton.addEventListener("click", function () {
+
+    const confirmExit = confirm("Are you sure you want to exit TaskFlow?");
+
+    if (confirmExit) {
+        window.close();
+
+        setTimeout(function () {
+            alert("TaskFlow cannot close this browser tab automatically. You can close the tab manually.");
+        }, 300);
     }
 });
 
