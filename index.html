@@ -10,27 +10,36 @@
 
     <div class="app">
 
+        <!-- Exit Button -->
         <button id="exitButton" class="exit-btn" title="Exit TaskFlow">
             <span class="exit-icon">⇥</span>
             <span>Exit</span>
         </button>
 
+        <!-- Header -->
         <div class="hero">
             <div class="logo">✓</div>
             <h1>TaskFlow</h1>
             <p>Organize your day. Get things done.</p>
         </div>
 
+        <!-- Add Task -->
         <div class="task-input">
-            <input type="text" id="taskInput" placeholder="What needs to be done?">
+            <input 
+                type="text" 
+                id="taskInput" 
+                placeholder="What needs to be done?"
+            >
             <button id="addTask">+ Add Task</button>
         </div>
 
+        <!-- Task Information -->
         <div class="task-info">
             <span>My Tasks</span>
             <span id="taskCount">0 tasks</span>
         </div>
 
+        <!-- Tasks -->
         <ul id="taskList"></ul>
 
     </div>
